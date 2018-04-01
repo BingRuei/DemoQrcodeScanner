@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript">
+      function scan() {
+        // 呼叫Barcode掃瞄器套件
+        cordova.plugins.barcodeScanner.scan(function (result) {
+          // 成功則回傳掃描內容
+          alert(JSON.stringify(result));
+        }, function (error) {
+          // 失敗則掃描錯誤代碼
+          alert(JSON.stringify(error));
+        });
+      }
+    </script>
+    <button onclick="scan()">SCAN</button>
+  </body>
+</html>
